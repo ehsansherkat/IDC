@@ -14,4 +14,17 @@ https://youtu.be/qbNJC4q-8jU
 
 # Citation 
 If you used the code please cite the following paper:
+```
+@misc{IUISherkat2018,
+   Author = {Ehsan Sherkat, Evangelos Milios, Rosane Minghim},
+   Title  = {Interactive Document Clustering Revisited: A Visual Analytics Approach},
+   Year   = {2018},
+   link   = {http://iui.acm.org/2018/accepted_papers.html},
+   Url    = {https://doi.org/10.1145/3172944.3172964},
+   doi    = {10.1145/3172944.3172964},
+   location = {Tokyo, Japan},
+   publisher = {ACM},
+   booktitle= {Natural Language Processing and Information Systems, IUI 2018}
+}
+```
 
