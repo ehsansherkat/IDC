@@ -1,0 +1,294 @@
+<!-- Ehsan Sherkat - Project -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" /> <!-- favicon --> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Interactive Clustering v2.0.0</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">  <!-- should be the first -->    
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <!-- for tooltips -->
+    <link type="text/css" rel="stylesheet" href="css/jquery.qtip.min.css" />
+    <script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+
+  	<!-- for tree view -->
+    <link rel="stylesheet" href="css/style.min.css" />
+    <script src="js/jstree.min.js"></script>
+    <!-- -->
+  	<script src="js/jquery.ui.core.js"></script>
+	<script src="js/jquery.ui.widget.js"></script>
+	<script src="js/jquery.ui.mouse.js"></script>
+	<script src="js/jquery.ui.draggable.js"></script>
+	<script src="js/jquery-collision.js"></script>
+	<script src="js/jquery-ui-draggable-collision.js"></script>
+
+	<!-- for highlighting terms -->
+	<script src="js/jquery.highlight-5.js"></script>
+
+	<!-- for context menu -->
+	<script src="js/jquery.ui.position.js" type="text/javascript"></script>
+    <script src="js/jquery.contextMenu.js" type="text/javascript"></script>
+    <link href="css/jquery.contextMenu.css" rel="stylesheet" type="text/css" />  
+
+	<!-- for D3 -->
+	<script src="js/d3.js" charset="utf-8"></script>
+	<script src="js/d3.tip.v0.6.3.js"></script>
+
+	<script src="js/d3.layout.cloud.js"></script> <!-- for word cloud -->
+
+	<!-- for dialogue -->
+	<link type="text/css" rel="stylesheet" href="css/jquery-impromptu.min.css" />
+    <script type="text/javascript" src="js/jquery-impromptu.min.js"></script>
+
+    <!-- for color palette -->
+    <script type="text/javascript" src="js/palette.js"></script>
+
+	<!-- for documents projection in graph view -->
+	<script src="js/tsne.js"></script>
+
+    <!-- my codes -->
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <script src="js/style.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>    
+</head>
+<body onload="pageLoad()" onbeforeunload="return pageClose()">
+
+	<!----------------------- panel1 -------------------------->
+	<div id="panel1">
+		<input id="button1" title="Help" class="button" type="button" value = "Help" onclick = "openHelpPage()" />
+		<input id="button2" title="Upload Document" class="button" type="button" value = "Upload Document" onclick = "openUploadPage()" />
+		<input id="button3" title="Save Session" class="button" type="button" value = "Save Session" onclick = "saveSession()" />
+		<input id="button14" title="Delete Session" class="button" type="button" value = "Delete Session" onclick = "deleteSession()" />
+		<input id="button18" title="Add Note" class="button" type="button" value = "Note" />		
+		<select id="session_select"><!-- list of sessions are here! --> <option value="first" disabled selected>Select Session</option></select>
+		<input type="checkbox" id="auto_save_session" ><span id="auto_save_session_text">Auto save session</span><br>
+		<input id="button4" title="Cluster" class="button" type="button" value = "Cluster" onclick = "SendData2Server()" />
+
+		<span id="slider0_label">Confidence (%):</span>		
+		<input id="slider0_Textbox" type="text" onkeyup="changeSlider0()"/>
+		<span id="slider0_min">0</span>
+		<span id="slider0_max">100</span>
+		<div id="slider0"></div>
+
+		<span id="Clustering_algo_text_main">Clustering <br>Method:</span>
+    	<select id="Clustering_algo_select_main">
+      		<option value='LDC'>LDC</option>
+      		<option value='iK-means'>iK-means</option>
+    	</select>
+    	<script>
+			document.getElementById('Clustering_algo_select_main').onchange = function(){
+				clusteringMethod = $('#Clustering_algo_select_main').val()
+				if (clusteringMethod == 'LDC') {
+					$( "#slider0" ).slider( "disable" );
+					$("#slider0_Textbox").attr("disabled","disabled");
+				}
+				else if (clusteringMethod == "iK-means") {
+          			$( "#slider0" ).slider( "enable" );
+					$("#slider0_Textbox").removeAttr("disabled");
+        		}      			
+			}
+		</script>
+
+		<input id="textbox1" title="" placeholder="Search" onclick="selectText()" class="textbox" autocomplete="on" type="text" width="800px" />
+		<script>
+			document.getElementById('session_select').onchange = function(){
+				$("body").css("cursor", "wait");
+
+				var ok = confirm("Do you want to load this session? Please save your work before.");
+
+  				if(!ok) {
+    				$("#session_select option[value='first']").attr("selected", true);
+    				$("body").css("cursor", "auto");
+    				return null;
+  				}
+
+  				var sessionName = this.value;
+
+    			loadSession(sessionName);
+			}
+		</script>
+	</div>
+
+	<!----------------------- panel2 (document view) -------------------------->
+	<div class="resizable" id="panel2" ondrag="panelDrag(this)" onclick="panelDrag(this)">
+		<p id="panel2title" class="panelTitle">Document View</p>
+		<select id="doc_select">
+			<!-- list of documnets are here! -->				
+		</select>
+		<input id="button15" title="ShowPDF" class="button" type="button" value = "ShowPDF" onclick = "showDocumentPDF(document.getElementById('doc_select').value)" />
+		<input id="button16" title="ShowCloud" class="button" type="button" value = "ShowCloud" onclick = "showDocumentCloud(document.getElementById('doc_select').value)" />
+		<p id="doc_content"></p>
+		<script>
+			document.getElementById('doc_select').onchange = function(){
+
+				document.getElementById("doc_content").innerHTML = "";
+    			loadDoc(this.value);
+
+    			//show the paralel cordinator view
+    			var words = new Array(1);
+              	var colors = {};
+              	words[0] = this.value;
+              	colors[words[0]] = $( "#"+getSelectedClusterID() + " p" ).css("background-color");//"Blue";
+  				paralelCordinator(documentClusterData, "#panel6", words, "#DocumentClusterView", colors);
+
+  				//highlight the document in general view
+  				highlightDocGeneralView(this.value);
+
+  				//change the color of selected doc to red
+  				$(this).css('color','red');
+  				var options = this.children;
+    			for(var i=0; i < this.childElementCount; i++){
+    				if(options[i].value == this.value)
+    					options[i].style.color = 'red';        				
+        			else
+        				options[i].style.color = 'black';
+    			}
+			}
+		</script>
+	</div>
+
+	<!----------------------- panel3 (Cluster Key Terms) -------------------------->
+	<div class="resizable" id="panel3" ondrag="panelDrag(this)" onclick="panelDrag(this)">
+		<p id="panel3title" class="panelTitle">Cluster Keyterms View</p>
+		<div id="panel3scroll">
+		<div id="word_lists">
+			<ol id="selectable">
+			</ol>
+		</div>
+		<div id="barcharts">
+		</div>
+		</div>	
+	</div>
+
+	<!----------------------- panel4 (Clusters) -------------------------->
+	<div class="resizable" id="panel4" onclick="enableDrag()" ondrag="panelDrag(this)">
+		<p id="panel4title" class="panelTitle">Clusters View</p>
+		<input id="button12" title="Add Cluster" class="button" type="button" value = "Add Cluster" onclick = "addCluster()" />
+		<label id="silhouette" ></label>
+		<label id="userName" ></label>
+		<div id="spliter1"></div> <!-- spliter line -->
+		<div id="panel4_1">
+			<!-- clusters are here! -->	
+		</div>
+	</div>
+
+	<!----------------------- panel5 (Cluster Tree View) -------------------------->	
+	<div class="resizable" id="panel5" ondrag="panelDrag(this)" onclick="panelDrag(this)">
+		<p id="panel5title" class="panelTitle">Cluster Tree View</p>
+			<div id="cluster_tree_view">		 		
+		 		<ul>
+					<li data-jstree='{ "opened" : true }' class="context-menu-zero box menu-1">Clusters</li>
+					<!-- cluster list goes here! -->
+				</ul>		 		
+			</div>		
+	</div>
+
+	<!----------------------- panel6 (Document-Cluster View) ------------------------>
+	<div class="resizable" id="panel6" ondrag="panelDrag(this)" onclick="panelDrag(this)">
+		<p id="panel6title" class="panelTitle">Document-Cluster View</p>
+		<div id="DocumentClusterView">
+			<!-- the svg of paralelCordinator goes here -->			
+		</div>
+	</div>
+
+	<!----------------------- panel7 (Term-Cluster View) -------------------------->
+	<div class="resizable" id="panel7" ondrag="panelDrag(this)" onclick="panelDrag(this)">
+		<p id="panel7title" class="panelTitle">Term-Cluster View</p>
+		<div id="TermClusterView">
+			<!-- the svg of paralelCordinator goes here -->
+		</div>
+	</div>
+
+	<!----------------------- panel8 (Term Cloud) -------------------------->
+	<div class="resizable" id="panel8" ondrag="panelDrag(this)" onclick="panelDrag(this)">
+		<div>
+		<p id="panel8title" class="panelTitle">Term Cloud View</p>
+		<input id="button6" title="Cluster Cloud" class="button" type="button" value = "Cluster Cloud" onclick = "loadCloudAgain()" />
+		<input id="button7" title="My Cloud" class="button" type="button" value = "My Cloud" onclick = "showMyCloud()" />
+		<input id="button8" title="Clear Cloud" class="button" type="button" value = "Clear Cloud" onclick = "clearCloud()" />
+		<p id="colorCheckBox">Color:<input type="checkbox" id="cloudColor"></p>
+		</div>
+		<div id="panel8_2">
+			<!-- Term cloud goes here -->
+		</div>
+	</div>
+
+	<!----------------------- panel9 (General View) -------------------------->
+	<div class="resizable" id="panel9" ondrag="panelDrag(this)" onclick="panelDrag(this)">
+		<p id="panel9title" class="panelTitle">Graph View</p>		
+		<div id="tabs">
+  			<ul>
+    			<li><a href="#tabs-1">t-SNE</a></li>
+    			<li><a href="#tabs-2">Force Layout</a></li>
+ 			</ul>
+ 			<div id="tabs-1" class="context-menu-four box menu-1"><!-- tab1 -->
+ 				<span id="TsneSilhouette_label"></span>
+  				<div id="general_view1" >  				
+  				<!-- Documents graph goes here (T-SNE layout) -->  				
+  				</div>
+  				<div id="tabs-1_controls">
+					<span id="slider4_label">Perplexity [5-50]:</span>		
+					<input id="slider4_Textbox" type="text" onkeyup="changeSlider4()"/>
+					<span id="slider4_min">5</span>
+					<span id="slider4_max">50</span>
+					<div id="slider4"></div>
+					<input id="button41" title="apply" class="button" type="button" value = "apply" onclick = "changePerplexity()" />
+				</div>
+
+  			</div>
+  			<div id="tabs-2" class="context-menu-four box menu-1"><!-- tab2 -->
+  				<input id="button19" title="Silhouette" class="button" type="button" value = "Silhouette" onclick = "forceSilhouette()" />
+  				<span id="forceSilhouette_label"></span>
+  				<div id="general_view2">
+  				<!-- Documents graph goes here (Force layout) -->
+  				</div>
+				<span id="slider3_label">Gravity (%):</span>		
+				<input id="slider3_Textbox" type="text" onkeyup="changeSlider3()"/>
+				<span id="slider3_min">0</span>
+				<span id="slider3_max">100</span>
+				<div id="slider3"></div>
+
+				<span id="slider2_label">Link Distance [0-100]:</span>		
+				<input id="slider2_Textbox" type="text" onkeyup="changeSlider2()"/>
+				<span id="slider2_min">0</span>
+				<span id="slider2_max">100</span>
+				<div id="slider2"></div>    			
+  			</div>
+		</div>
+
+		<div id="panel9_filters">
+			<span id="filter1_label">First Filter:</span>
+			<select id="filter1_select"><!-- list of filter1 are here! --> <option value=""></option></select>
+			<script>
+			document.getElementById('filter1_select').onchange = function(){
+  				applyFilter()
+			}
+			</script>
+			<span id="filter2_label">Second Filter:</span>		
+			<select id="filter2_select"><!-- list of filter2 are here! --> <option value=""></option></select>
+			<script>
+			document.getElementById('filter2_select').onchange = function(){
+    			applyFilter()
+			}
+			</script>
+		</div>	
+
+		<div id="tabs-common-control">
+			<span id="slider1_label">Cosine Distance (%):</span>		
+			<input id="slider1_Textbox" type="text" onkeyup="changeSlider1()"/>
+			<span id="slider1_min">0</span>
+			<span id="slider1_max">97</span>
+			<div id="slider1"></div>
+
+			<span id="span1">#Documents: </span><span id="span2"></span>
+			<span id="span3">#Links: </span><span id="span4"></span>
+			<input id="button17" title="Graph VNA" class="button" type="button" value = "Graph VNA" 
+				onclick = "exportGraphToVNAformat($('#slider1_Textbox').val()/100)" />
+			<input id="button11" title="MindMap" class="button" type="button" value = "MindMap" onclick = "MindMapClicked()" />
+		</div>
+	</div>
+	<!-- ---------------------------------------------------- -->
+</body>
+</html>

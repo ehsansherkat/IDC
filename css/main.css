@@ -1,0 +1,1560 @@
+/**************************
+ * Author: Ehsan Sherkat  *
+ * Copyright: 2015        *
+ **************************/
+
+#panel1 {
+  position: absolute;
+  left: 9%;
+  top: 0.5%;
+  width:81.6%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  height: 5.5%;
+  margin: 3px;
+  background-color: white;
+  z-index: 2;
+}
+
+#panel2 {
+  /*position: absolute;
+  top: 7.5%;
+  left:74%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  width:25%;
+  float: left;
+  height: 20%;
+  margin: 3px;
+  background-color: white;*/
+  position: absolute;
+  top: 28.5%;
+  left:9%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  width:15%;
+  float: left;
+  height: 49%;
+  margin: 3px;
+  background-color: white;
+}
+
+#doc_content {
+  top: 5%;
+  position: absolute;
+  overflow: scroll;
+  height: 90%;
+  width: 97%;
+  left:2%;
+  font-size: 82%;
+}
+
+#panel3 {
+  position: absolute;
+  top: 69%;
+  left:65%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  width:13%;
+  float: left;
+  height: 30%;
+  margin: 3px;
+  background-color: white;
+  /*position: absolute;
+  top: 7.5%;
+  left:16%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;  
+  width:15%;
+  float: left;
+  height: 60%;
+  margin: 3px; 
+  background-color: white;*/
+}
+
+#panel3scroll {
+  top: 4%;
+  position: absolute;
+  overflow: scroll;
+  height: 95%;
+  width: 99%;
+}
+
+.cluster {
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  position: absolute;
+  /*height: 250px;*/
+  height: 50%;
+  border-radius: 10px;  
+  width: 24%;
+  cursor: pointer;
+}
+
+.clusterwordlist {
+  position: absolute;
+  overflow-x: hidden;
+  overflow: auto;
+  top: 20%;
+  height: 80%;
+  width: 99%;
+}
+
+#panel4 {
+/*  position: absolute;
+  top: 7.5%;
+  left:31.5%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  width:42%;
+  float: left;
+  height: 60%;
+  margin: 3px;  
+  background-color: white;*/
+  /*overflow: scroll;*/
+  position: absolute;
+  top: 7.5%;
+  left:65%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  width:25.5%;
+  float: left;
+  height: 35%;
+  margin: 3px;
+  background-color: white;
+}
+
+#slider0_label {
+  position: absolute;
+  top: 1%;
+  left:53%;
+  font-size: 70%;
+}
+
+#slider0_Textbox {
+  position: absolute;
+  top: 35%;
+  left:53%;
+  width:2%;
+  height: 15%;
+  border-radius: 10px;
+  border: 1px solid #808080;
+  text-align:center;
+  font-size: 60%;
+}
+
+#slider0_min {
+  position: absolute;
+  top: 60%;
+  left:56%;
+  font-size: 50%;
+}
+
+#slider0_max {
+  position: absolute;
+  top: 60%;
+  left:61%;
+  font-size: 50%;
+}
+
+#slider0 {
+  position: absolute;
+  top: 35%;
+  left:56%;
+  width:5%;
+  height: 20%;
+  padding-left: 2px;
+  cursor: pointer;
+}
+
+#Clustering_algo_text_main {
+  position: absolute;
+  top: 1%;
+  left:63%;
+  font-size: 70%;
+}
+
+#Clustering_algo_select_main {
+  position: absolute;
+  top: 1%;
+  left:67%;
+  font-size: 70%;
+}
+
+#spliter1 {
+  position: absolute;
+  top: 8.9%;
+  width:99%;
+  height: 1px;
+  background-color: #CCCCCC;
+}
+
+#panel4_1 {
+  top: 9%;
+  position: absolute;
+  overflow: scroll;
+  height: 90%;
+  width: 99%;
+}
+
+#panel5 {
+  position: absolute;
+  top: 7.5%;
+  left:9%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  width:15%;
+  float: left;
+  height: 20%;
+  margin: 3px;
+  background-color: white;
+}
+
+#cluster_tree_view {
+  top: 9%;
+  position: absolute;
+  overflow: scroll;
+  height: 90%;
+  width: 99%;
+}
+
+#panel6 {
+  position: absolute;
+  top: 78.5%;
+  left:9%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  width:15%;
+  float: left;
+  height: 20%;
+  margin: 3px;
+  background-color: white;
+}
+
+#DocumentClusterView {
+  top: 9%;
+  position: absolute;
+  overflow: scroll;
+  height: 90%;
+  width: 99%;
+}
+
+#panel7 {
+/*  position: absolute;
+  top: 68.5%;
+  left:16%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  width:15%;
+  float: left;
+  height: 30%;
+  margin: 3px;
+  background-color: white;*/
+  position: absolute;
+  top: 69%;
+  left:78.25%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  width:12.25%;
+  float: left;
+  height: 30%;
+  margin: 3px;
+  background-color: white;
+}
+
+#TermClusterView {
+  top: 9%;
+  position: absolute;
+  overflow: scroll;
+  height: 90%;
+  width: 99%;
+}
+
+#panel8 {
+/*  position: absolute;
+  top: 68.5%;
+  left:31.5%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  width:42%;
+  float: left;
+  height: 30%;
+  margin: 3px;
+  background-color: white;*/
+  position: absolute;
+  top: 43.5%;
+  left:65%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  width:25.5%;
+  float: left;
+  height: 24.5%;
+  margin: 3px;
+  background-color: white;
+}
+
+#panel8_2 {
+  position: absolute;
+  top: 20%;
+  overflow: scroll;
+  width:99%;
+  height: 80%;
+}
+
+#panel9 {
+/*  position: absolute;
+  top: 28.5%;
+  left:74%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  width:25%;
+  float: left;
+  height: 70%;
+  margin: 3px;
+  background-color: white;*/
+  position: absolute;
+  top: 7.5%;
+  left:24.25%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;  
+  width:40.5%;
+  float: left;
+  height: 91%;
+  margin: 3px; 
+  background-color: white;
+}
+
+#general_view1 {
+  top: 4%;
+  position: absolute;
+  overflow: auto;
+  left: 0%;
+  height: 89%;
+  width: 100%;
+}
+
+#tabs-1_controls {
+  left: 35%;
+  bottom: 0%;
+  position: absolute;
+  overflow: auto;
+  height: 7%;
+  width: 35%;
+}
+
+#tabs-common-control {
+  left: 0%;
+  bottom: 0%;
+  position: absolute;
+  overflow: auto;
+  height: 7%;
+  width: 35%;
+}
+
+#panel9_filters {
+  left: 70%;
+  bottom: 0%;
+  position: absolute;
+  overflow: auto;
+  height: 7%;
+  width: 30%;
+}
+
+#general_view2 {
+/*  top: 12%;
+  position: absolute;
+  overflow: auto;
+  height: 62%;
+  width: 96%;*/
+  top: 6%;
+  position: absolute;
+  /*overflow: auto;*/
+  left: 0%;
+  height: 87%;
+  width: 100%;
+}
+
+#tabs {
+  top: 1.5%;
+  left: 0.0%;
+  position: absolute;
+  height: 98.5%;
+  width: 99.5%;
+  border: none;
+  font-size: 60%;
+}
+
+.panelTitle {
+  cursor:move;
+  border:thin;
+  border:#CCC;
+  border-bottom-style: dotted;
+  border-width:thin;
+  text-align: center;
+  top: -16px;
+  background-color: #CCC; 
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+  font-size: 80%;  
+}
+
+.clusterTitle {
+  cursor:move;
+  border:thin;
+  border:#CCC;
+  border-bottom-style: dotted;
+  border-width:thin;
+  text-align: center;
+  position: relative;
+  top: -18px;
+  /*background-color: #99CCFF; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 15%;
+}
+
+.button {
+  width: 100%;
+  text-align:center;
+  margin:auto auto;
+  width: 120px;
+  font-size: 60%;
+  color: #333;
+  border:1px solid #b7b7b7; 
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px;
+/*  border-radius: 3px;
+  padding: 8px ;*/ 
+  text-decoration:none; 
+  /*text-shadow: -1px -1px 0 rgba(0,0,0,0.3);*/
+  color: black;
+  background-color: #d3d3d3; background-image: -webkit-gradient(linear, left top, left bottom, from(#d3d3d3), to(#B5B5B5));
+  background-image: -webkit-linear-gradient(top, #d3d3d3, #B5B5B5);
+  background-image: -moz-linear-gradient(top, #d3d3d3, #B5B5B5);
+  background-image: -ms-linear-gradient(top, #d3d3d3, #B5B5B5);
+  background-image: -o-linear-gradient(top, #d3d3d3, #B5B5B5);
+  background-image: linear-gradient(to bottom, #d3d3d3, #B5B5B5);
+  filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#d3d3d3, endColorstr=#B5B5B5);
+}
+
+.button:hover { 
+  cursor: pointer;
+  border:1px solid #a0a0a0;
+  background-color: #bababa; background-image: -webkit-gradient(linear, left top, left bottom, from(#bababa), to(#9c9c9c));
+  background-image: -webkit-linear-gradient(top, #bababa, #9c9c9c);
+  background-image: -moz-linear-gradient(top, #bababa, #9c9c9c);
+  background-image: -ms-linear-gradient(top, #bababa, #9c9c9c);
+  background-image: -o-linear-gradient(top, #bababa, #9c9c9c);
+  background-image: linear-gradient(to bottom, #bababa, #9c9c9c);
+  filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#bababa, endColorstr=#9c9c9c);
+}
+
+#button1 {  
+  position: absolute;
+  top: 25%;
+  left:0.5%;
+  width: 5%;
+  height: 50%;  
+}
+
+#button2 {  
+  position: absolute;
+  top: 25%;
+  left: 5.7%;
+  width: 5%;
+  height: 50%;  
+}
+
+#button3 {  
+  position: absolute;
+  top: 25%;
+  left: 12.5%;
+  width: 5%;
+  height: 50%;  
+}
+
+#session_select {
+  position: absolute;
+  top: 25%;
+  left: 17.7%;
+  width: 6.5%;
+  height: 50%;
+  background: #ececec;
+  border-radius: 5px;
+  font-size: 61%;
+}
+
+#session_select:hover {
+  background-color: #FFFAF0 !important;
+  cursor: pointer;
+}
+
+#button14 {  
+  position: absolute;
+  top: 25%;
+  left: 24.4%;
+  width: 5%;
+  height: 50%;  
+}
+
+#button18 {
+  position: absolute;
+  top: 25%;
+  left:29.7%;
+  width: 3%;
+  height: 50%;
+}
+
+#auto_save_session {
+  position: absolute;
+  top: 25%;
+  left:33.1%;
+}
+
+#auto_save_session_text {
+  position: absolute;
+  top: 25%;
+  left:34.2%;
+  font-size: 90%;
+}
+
+#button4 {  
+  position: absolute;
+  top: 25%;
+  left:45%;
+  width: 6%;
+  height: 50%;  
+}
+
+#button6 {  
+  position: absolute;  
+  left:1%;  
+  width: 15%;
+  top: 7%;  
+  height: 10%;  
+}
+
+#button7 {  
+  position: absolute;
+  top: 7%;  
+  height: 10%;
+  left:17%;
+  width: 15%;  
+}
+
+#button8 {  
+  position: absolute;
+  top: 7%;  
+  height: 10%;
+  left:33%;
+  width: 15%;  
+}
+
+#colorCheckBox {
+  position: absolute;
+  top: 3.5%; 
+  right:3%;
+  font-size: 80%;
+}
+
+#filter1_label {
+  position: absolute;
+  top: 20%;  
+  left:20%;
+  font-size: 70%;
+}
+
+#filter1_select {
+  top: 20%;
+  position: absolute;
+  left:55%;
+  height: 30%;
+  width: 35%;
+  background: #ececec;
+  border-radius: 5px;
+  font-size: 90%;
+}
+
+#filter2_label {
+  position: absolute;
+  top: 60%;  
+  left:20%;
+  font-size: 70%;
+}
+
+#filter2_select {
+  top: 60%;
+  position: absolute;
+  left:55%;
+  height: 30%;
+  width: 35%;
+  background: #ececec;
+  border-radius: 5px;
+  font-size: 90%;
+}
+
+#TsneSilhouette_label {
+  top: 5%;
+  position: absolute;
+  left:1%;
+  font-size: 100%;
+}
+
+#button19 {
+  top: 4%;
+  position: absolute;
+  left:1%;
+  width: 10%;
+  height: 1.9%; 
+}
+
+#forceSilhouette_label {
+/*  top: 9.5%;
+  position: absolute;
+  left:18%;
+  font-size: 100%;*/
+  top: 4.3%;
+  position: absolute;
+  left:12%;
+  font-size: 100%;
+}
+
+#slider1_label {
+  position: absolute;
+  top: 15%;
+  left:1%;  
+  font-size: 70%;
+}
+
+#slider1_Textbox {
+  position: absolute;
+  top: 15%;
+  left:37%;
+  width:10%;
+  height: 15%;
+  border-radius: 10px;
+  border: 1px solid #808080;
+  text-align:center;
+  font-size: 60%;
+}
+
+#slider1_min {
+  position: absolute;
+  top: 30%;
+  left:50%;
+  font-size: 60%;
+}
+
+#slider1_max {
+  position: relative;
+  top: 30%;
+  left: 95%;
+  font-size: 60%;
+}
+
+#slider1 {
+  position: absolute;
+  top: 15%;
+  left:50%;
+  width:45%;
+  height: 15%;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+#slider2_min {
+/*  position: absolute;
+  bottom: 12%;
+  left:45%;
+  font-size: 50%;*/
+  position: absolute;
+  bottom: 0.2%;
+  left:53%;
+  font-size: 70%;
+}
+
+#slider2_max {
+/*  position: absolute;
+  bottom: 12%;
+  left:91%;
+  font-size: 50%;*/
+  position: absolute;
+  bottom: 0.2%;
+  left:71.5%;
+  font-size: 70%;
+}
+
+#slider2_label {
+/*  position: absolute;
+  bottom: 13%;
+  right:69%;
+  font-size: 90%;*/
+  position: absolute;
+  bottom: 0.6%;
+  left:36%;
+  font-size: 90%;
+}
+
+#slider2_Textbox {
+/*  position: absolute;
+  bottom: 13%;
+  left:32%;
+  width:10%;
+  height: 2.5%;
+  border-radius: 10px;
+  border: 1px solid #808080;
+  text-align:center;
+  font-size: 90%;*/
+  position: absolute;
+  bottom: 0.6%; 
+  left:48%;
+  width:4%;
+  height: 1.2%;
+  border-radius: 5px;
+  border: 1px solid #808080;
+  text-align:center;
+  font-size: 90%;
+}
+
+#slider2 {
+  position: absolute;
+  bottom: 1%;
+  left:53%;
+  width:18%;
+  height: 1%;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+#slider3_min {
+/*  position: absolute;
+  bottom: 17.5%;
+  left:45%;
+  font-size: 70%;*/
+  position: absolute;
+  bottom: 3.8%;
+  left:53%;
+  font-size: 70%;
+}
+
+#slider3_max {
+/*  position: absolute;
+  bottom: 17.5%;
+  left:91%;
+  font-size: 70%;*/
+  position: absolute;
+  bottom: 3.8%;
+  left:71.5%;
+  font-size: 70%;
+}
+
+#slider3_label {
+/*  position: absolute;
+  bottom: 18%;
+  right:69%;
+  font-size: 90%;*/
+  position: absolute;
+  bottom: 4.5%;
+  left: 41%;
+  font-size: 90%;
+}
+
+#slider3_Textbox {
+/*  position: absolute;
+  bottom: 18.5%;
+  left:32%;
+  width:10%;
+  height: 2.5%;
+  border-radius: 10px;
+  border: 1px solid #808080;
+  text-align:center;
+  font-size: 90%;*/
+  position: absolute;
+  bottom: 4.5%; 
+  left:48%;
+  width:4%;
+  height: 1.2%;
+  border-radius: 5px;
+  border: 1px solid #808080;
+  text-align:center;
+  font-size: 90%;
+}
+
+#slider3 {
+/*  position: absolute;
+  bottom: 19%;
+  left:45%;
+  width:46%;
+  height: 2%;
+  padding-left: 5px;
+  cursor: pointer;*/
+  position: absolute;
+  bottom: 4.5%;
+  left:53%;
+  width:18%;
+  height: 1%;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+#slider4_min {
+  position: relative;
+  top: 38%;
+  left: 47%;
+  font-size: 90%;
+}
+
+#slider4_max {
+  position: relative;
+  top: 35%;
+  left: 79%;
+  font-size: 90%;
+}
+
+#slider4_label {
+  position: absolute;
+  top: 15%;
+  left:8%;  
+  font-size: 95%;
+}
+
+#slider4_Textbox {
+  position: absolute;
+  top: 15%;
+  left:35%;
+  width:10%;
+  height: 15%;
+  border-radius: 10px;
+  border: 1px solid #808080;
+  text-align:center;
+  font-size: 100%;
+}
+
+#slider4 {
+  position: absolute;
+  top: 15%;
+  left: 47%;
+  width:34%;
+  height: 15%;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+#button41 {  
+  position: absolute;
+  top: 15%;
+  left:85%;
+  width: 15%;
+  height: 20%;
+  font-size: 80%;
+}
+
+#slider1 .ui-slider-handle, 
+#slider2 .ui-slider-handle,
+#slider3 .ui-slider-handle,
+#slider4 .ui-slider-handle{
+  position: absolute;
+  cursor: pointer;
+  height: 200%;
+}
+
+/*#slider1 .ui-slider-range, 
+#slider2 .ui-slider-range,
+#slider3 .ui-slider-range{
+   background: #3388cc;
+}
+*/
+#span1 {
+  position: absolute;
+  bottom: 1%;
+  left:1%;
+  font-size: 70%;
+}
+
+#span2 {
+  position: absolute;
+  bottom: 1%;
+  left: 30%;
+  font-size: 70%;
+}
+
+#span3 {
+  position: absolute;
+  top: 50%;
+  left:1%;
+  font-size: 70%;
+}
+
+#span4 {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  font-size: 70%;
+  
+}
+
+#button17 {
+  position: absolute;
+  bottom: 1%;
+  right:22%;
+  width: 15%;
+  height: 30%;
+  width: 20%;
+  font-size: 50%;
+}
+
+#button11 {  
+  position: absolute;
+  bottom: 1%;
+  right:3%;
+  width: 18%;
+  height: 30%;
+  font-size: 50%;
+}
+
+#button12 {  
+  position: absolute;
+  left:1%;
+  top: 3.4%;
+  width: 15%;
+  height: 5%;
+}
+
+#silhouette {
+  position: absolute;
+  left: 17%;
+  top: 5%;
+  font-size: 80%;
+}
+
+#userName {
+  position: absolute;
+  right: 1%;
+  top: 5%;
+  font-size: 80%;
+}
+
+.textbox {
+  width: 400px;
+  height: 70%;
+  border-radius: 5px;
+  border: 1px solid #b8b8b9;  
+  font-size: 24px;
+  color: #333;
+}
+
+#textbox1 {
+  position: absolute;
+  top: 25%;
+  right: 0.5%;
+  width: 25%;
+  height: 50%;
+  background: #ececec;
+  font-size: 80%;
+}
+
+#textbox1:hover {
+  background: #FFFAF0;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+    /*writing-mode: tb-rl;*/
+}
+
+.sortable { 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; width: 60%;
+  text-align: center;
+  display:inline;
+}
+
+#doc_select {
+  position: absolute;
+  top: 3.4%;
+  width: 60%;
+  height: 4%;
+  background: #ececec;
+  font-size: 60%;
+}
+
+#doc_select:hover {
+  background-color: #FFFAF0 !important;
+  cursor: pointer;
+}
+
+#button15 {
+  position: absolute;
+  left:60%;
+  top: 3.4%;;
+  width: 20%;
+  height: 3.5%;
+}
+
+#button16 {
+  position: absolute;
+  left:80%;
+  top: 3.4%;
+  width: 20%;
+  height: 3.5%;
+  font-size: 50%;
+}
+
+#selectable .ui-selecting { 
+  background: #767676; 
+}
+#selectable .ui-selected { 
+  background: #767676; 
+}
+#selectable { 
+  list-style-type: none;
+   margin: 0; 
+   padding: 0; 
+   width: 100%; 
+ }
+#selectable li { 
+  margin: 2px; 
+  padding: 0.6em; 
+  font-size: 70%; 
+  height: 5px;
+}
+
+#selectable li:hover {
+  cursor: pointer;
+  background: #E6D5E1;
+}
+
+#word_lists {
+  float: left;
+  width:65%;
+  overflow: auto;
+}
+
+#barcharts {
+  width:35%;
+  overflow: auto; 
+}
+
+.svg_par_cor {
+  font: 60% sans-serif;
+
+}
+
+/*.axis_par_cor text { 
+  display: none; 
+}*/
+
+.background_par_cor path {
+  fill: none;
+  stroke: #ddd;
+  shape-rendering: crispEdges;
+}
+
+.foreground_par_cor path {
+  fill: none;
+  stroke-width: 2px;
+}
+
+.axis_par_cor line,
+.axis_par_cor path {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis_par_cor text {
+  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+  cursor: move;
+}
+
+/*for term highlight back color*/
+.highlight {
+  background-color: yellow 
+}
+
+.ui-sortable:hover {
+  cursor: pointer;
+}
+
+/*for preventing change of the fade out on disabled dragable*/
+div.ui-state-disabled.ui-draggable-disabled {
+ opacity : 1;
+}
+
+/*for remvoing small dotted box inside the term list*/
+.ui-selectable-helper {
+  display:none;
+}
+
+.terms:hover {
+  cursor: move;
+}
+
+.termListSpan:hover {
+  cursor: move !important;
+}
+
+/*for the size of the auto complete in search bar*/
+.ui-autocomplete { 
+  height: 200px; 
+  overflow-y: scroll; 
+  overflow-x: hidden;
+  z-index:3 !important;
+}
+
+/*for the size of the font in search bar*/
+::-webkit-input-placeholder {
+   font-size: 85%;
+}
+
+.node {
+  stroke-width: 1px;
+  stroke: #414A4C;
+}
+
+.node:hover {
+  cursor: pointer;
+}
+
+.link {
+  stroke-width: 0.5px;
+  stroke: #a6a6a6;
+}
+
+.node2 {
+  stroke-width: 1px;
+  stroke: #414A4C;
+}
+
+.node2:hover {
+  cursor: pointer;
+}
+
+.link2 {
+  stroke-width: 0.5px;
+  stroke: #a6a6a6;
+}
+
+.hyperLink {
+  color: blue;
+}
+
+.hyperLink:hover {
+  cursor: pointer;
+}
+
+.terms {
+  font-size: 75%;
+}
+
+#video {
+  position: absolute;
+  top: 10%;
+  width:80%;
+  left: 10%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  height: 80%;
+  margin: 3px;
+  background-color: white;
+}
+
+#excelFrame {
+  position: absolute;
+  top: 3%;
+  width:50%;
+  left: 25%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  height: 94%;
+  margin: 3px;
+  background-color: white;
+  overflow: auto;
+}
+
+#upload_pannel {
+  position: absolute;
+  left: 1%;
+  top: 4.5%;
+  width:97%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  height: 40%;
+  margin: 3px;
+  background-color: white;
+}
+
+#inputFrametitle {
+  background-color: #99ccff;
+  font-size: 80%;
+  top: 0px;
+  cursor:default;
+}
+
+#file_list_pannel {
+  position: absolute;
+  top: 46%;
+  left: 1%;  
+  width:97%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  height: 48%;
+  margin: 3px;
+  background-color: white;
+}
+
+#buttonPreprocess {
+    position: absolute;
+    bottom: 1%;
+    left: 40%;
+    width: 16%;
+    height: 3%;
+}
+
+#file_list_title {
+  background-color: #99ccff;
+  font-size: 80%;
+  top: 0px;
+  cursor:default;
+}
+
+#uploadFrame {
+  position: absolute;
+  top: 3%;
+  width:50%;
+  left: 25%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  height: 94%;
+  margin: 3px;
+  background-color: white;
+  overflow: auto;
+}
+
+#userWelcome {
+  position: absolute;
+  top: 1%;
+  left: 3%; 
+  font-size: 90%;
+}
+
+#UploadprogressBar {
+  position: absolute;
+  top: 1%;
+  width: 40%;
+  left: 30%; 
+  height: 3%;
+
+}
+
+#input_info {
+  position: absolute;
+  top: 7%;
+  left: 1%;
+  font-size: 90%;
+}
+
+#upload_output {
+  overflow: auto;
+  position: absolute;
+  top: 30%;
+  width:97%;
+  left: 1%;
+  height: 65%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;  
+  border-width:thin;
+  margin: 3px;
+  background-color: GhostWhite;
+}
+
+#csv_pannel {
+  position: absolute;
+  top: 14%;
+  width:31%;
+  left: 1%;
+  height: 13%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;  
+  border-width:thin;
+  margin: 3px;
+  background-color: white;
+}
+
+#csv_pannel_title {
+  background-color: LightSeaGreen;
+  font-size: 80%;
+  top: 0px;
+  cursor:pointer;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+#button_csv {
+  position: absolute;
+  bottom: 10%;
+  width:97%;
+  left: 1%;
+  height: 45%;
+}
+
+#button_pdf {
+  position: absolute;
+  bottom: 10%;
+  width:97%;
+  left: 1%;
+  height: 45%;
+}
+
+#button_txt {
+  position: absolute;
+  bottom: 10%;
+  width:97%;
+  left: 1%;
+  height: 45%;
+}
+
+#pdf_pannel {
+  position: absolute;
+  top: 14%;
+  width:31%;
+  left: 34%;
+  height: 13%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;  
+  border-width:thin;
+  margin: 3px;
+  background-color: white;
+}
+
+#pdf_pannel_title {
+  background-color: LightCoral;
+  font-size: 80%;
+  top: 0px;
+  cursor:pointer;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+#txt_pannel {
+  position: absolute;
+  top: 14%;
+  width:31%;
+  left: 67%;
+  height: 13%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;  
+  border-width:thin;
+  margin: 3px;
+  background-color: white;
+}
+
+#txt_pannel_title {
+  background-color: LightYellow;
+  font-size: 80%;
+  top: 0px;
+  cursor: pointer;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+#buttonDeleteAll {
+  position: absolute; 
+  left: 2%;
+  width: 10%;
+  height: 5%;
+}
+
+#buttonDeleteSelected {
+  position: absolute; 
+  left: 13%;
+  width: 13%;
+  height: 5%;
+}
+
+#buttonShowFiles {
+  position: absolute; 
+  left: 27%;
+  width: 13%;
+  height: 5%;
+}
+
+#numberOfFiles {
+  position: absolute; 
+  left: 42%;
+  font-size: 100%;
+}
+
+#file_list_output {
+  overflow: auto;
+  position: absolute;
+  top: 13%;
+  width:97%;
+  left: 1%;
+  height: 82%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;  
+  border-width:thin;
+  margin: 3px;
+  background-color: GhostWhite;
+}
+
+#onlyEnglish {
+  position: absolute;
+  bottom: 1%;
+  left: 2%;  
+}
+
+#onlyEnglishText {
+  position: absolute;
+  bottom: 0.9%;
+  left: 4%;
+  font-size: 80%;
+}
+
+#numbers {
+  position: absolute;
+  bottom: 3%;
+  left: 2%;  
+}
+
+#numbersText {
+  position: absolute;
+  bottom: 2.9%;
+  left: 4%;
+  font-size: 80%;
+}
+
+#lematizer {
+  position: absolute;
+  bottom: 1%;
+  left: 25%;  
+}
+
+#lematizerText {
+  position: absolute;
+  bottom: 0.9%;
+  left: 27%;
+  font-size: 80%;
+}
+
+#bigram {
+  position: absolute;
+  bottom: 3%;
+  left: 25%;  
+}
+
+#bigramText {
+  position: absolute;
+  bottom: 2.9%;
+  left: 27%;
+  font-size: 80%;
+}
+
+#tsnePerplexityText {
+  position: absolute;
+  bottom: 1.8%;
+  left: 59%;
+  font-size: 80%;
+}
+
+#tsnePerplexitySelect {
+  position: absolute;
+  bottom: 1.8%;
+  left: 70%;
+  font-size: 80%;
+}
+
+.paletteCell:hover {
+  cursor: pointer;
+}
+
+#Clustering_algo_text {
+  position: absolute;
+  bottom: 0.6%;
+  left: 80%;
+  font-size: 80%;
+}
+
+#Clustering_algo_select {
+  position: absolute;
+  bottom: 1.8%;
+  left: 88.5%;
+  font-size: 70%;
+}

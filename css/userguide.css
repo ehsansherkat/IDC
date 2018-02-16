@@ -1,0 +1,69 @@
+/**************************
+ * Author: Ehsan Sherkat  *
+ * Copyright: 2015        *
+ **************************/
+ 
+#userguide_panel {
+  position: absolute;
+  top: 0.5%;
+  width:70%;
+  left:15%;
+  border:thin;
+  border:#CCC;
+  border-style:solid;
+  border-radius: 10px;
+  border-width:thin;
+  height: 95%;
+  margin: 3px;
+  background-color: white;
+}
+
+#introduction_margin {
+  position: absolute;
+  top: 0.5%;
+  width:100%;  
+  height: 30%;
+  overflow: auto;
+}
+
+#introduction{
+  position: absolute;
+  top: 0.5%;
+  width:90%;
+  left: 4.5%;
+  height: 26%;
+  margin: 3px;
+}
+
+#line1 {
+  position: absolute;
+  top: 31%;
+  width:100%;
+  height: 1px;
+  background-color: #CCC;
+  color:#CCC;
+}
+
+#panels {
+  position: absolute;
+  width:100%;
+  top: 35%;
+  height: 65%;
+  overflow: auto;
+}
+
+#accordion {
+  position: absolute;
+  width:80%;
+  left: 10%;
+}
+
+#copy_right {
+  color: #888888;
+}
+
+#copy_right_margin{
+  position: absolute;
+  width:100%;
+  top:96%;
+}
