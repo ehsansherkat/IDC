@@ -24,7 +24,7 @@ If you used the code please cite the following paper:
    doi    = {10.1145/3172944.3172964},
    location = {Tokyo, Japan},
    publisher = {ACM},
-   booktitle= {Natural Language Processing and Information Systems, IUI 2018}
+   booktitle= {IUI '18 Companion: Proceedings of the 23Rd International Conference on Intelligent User Interfaces Companion}
 }
 ```
 
