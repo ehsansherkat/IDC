@@ -3,4 +3,4 @@
 pdftotext
 
 The demo video of the proposed system:
-https://www.youtube.com/embed/qbNJC4q-8jU
+https://youtu.be/qbNJC4q-8jU
