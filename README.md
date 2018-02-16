@@ -2,4 +2,5 @@
 
 pdftotext
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qbNJC4q-8jU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+The demo video of the proposed system:
+https://www.youtube.com/embed/qbNJC4q-8jU
