@@ -6,6 +6,8 @@ The code has been tested on Linux operating system. If you need to upload pdf do
 
 pdftotext
 
+The Apache web server configured to run python files is needed as a webserver. We recommend to use Anaconda distribution of python.
+
 # Demo video
 The demo video of the proposed system:
 https://youtu.be/qbNJC4q-8jU
