@@ -1,0 +1,88 @@
+<!-- Ehsan Sherkat - Project -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Upload Documents</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">  <!-- should be the first -->    
+    <script src="js/jquery-1.10.2.js"></script>
+     <link rel="stylesheet" href="css/main.css">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- for D3 -->
+    <script src="js/d3.js" charset="utf-8"></script>
+    <script src="js/d3.tip.v0.6.3.js"></script>
+
+    <!-- for tooltips -->
+    <link type="text/css" rel="stylesheet" href="css/jquery.qtip.min.css" />
+    <script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+
+    <!-- My code -->
+    <script src="js/upload.js"></script>
+
+</head>
+<body onload="getUserID()">
+<div id="uploadFrame">
+  <p id="userWelcome">You are logged in as: ?</p>
+  <div id="UploadprogressBar">
+    <!-- Progress bar is here -->
+  </div>
+    <!----------------------- upload pannel -------------------------->
+    <div id="upload_pannel">
+      <p id="inputFrametitle" class="panelTitle">Upload Documents</p>
+      <p id="input_info">Please select the appropriate format for your files. You can upload PDF, TXT and CSV (with header) documents.</p>
+
+      <!-- upload CSV -->
+      <div id="csv_pannel">
+        <p id="csv_pannel_title" class="panelTitle">Upload CSV</p>
+        <input id="button_csv" type="file" name="CSV_Input" accept=".csv" />
+      </div>
+
+      <!-- upload PDF -->
+      <div id="pdf_pannel">
+        <p id="pdf_pannel_title" class="panelTitle">Upload PDF</p>
+        <form enctype="multipart/form-data">
+          <input type="file" name="pdf_Input[]" id="button_pdf" multiple accept=".pdf"/>
+        </form>
+      </div>
+
+      <!-- upload TXT -->
+      <div id="txt_pannel">
+        <p id="txt_pannel_title" class="panelTitle">Upload TXT</p>
+        <input type="file" name="txt_Input[]" id="button_txt" multiple accept=".txt"/>
+      </div>
+
+      <div id="upload_output">
+      <!-- output goes here! -->
+      </div>      
+    </div> 
+   <!----------------------- file list pannel -------------------------->
+  <div id="file_list_pannel">
+      <p id="file_list_title" class="panelTitle">List of Documents</p>
+      <input id="buttonDeleteAll" title="Delete all documents" class="button" type="button" value = "Delete all documents" onclick = "deleteAll()" />
+      <input id="buttonDeleteSelected" title="Delete selected documents" class="button" type="button" value = "Delete selected documents" onclick = "deleteSelectedFiles()" />
+      <input id="buttonShowFiles" title="Show Documents" class="button" type="button" value = "Show list of documents" onclick = "showFiles()" />
+      <p id="numberOfFiles"></p>
+      <div id="file_list_output">
+      <!-- list of files goes here! -->
+      </div>  
+  </div>
+  <!----------------------- pre-process -------------------------->
+    <input id="onlyEnglish" type="checkbox" name="onlyEnglish" value="onlyEnglish"><span id="onlyEnglishText">Only English characters</span>
+    <input checked id="numbers" type="checkbox" name="numbers" value="numbers"><span id="numbersText">Remove numbers</span>
+    <input id="lematizer" type="checkbox" name="lematizer" value="lematizer"><span id="lematizerText">Lematize</span>
+    <input id="bigram" type="checkbox" name="bigram" value="bigram"><span id="bigramText">Bigram</span>
+    <input id="buttonPreprocess" title="After any changes you need to preprocess documents." class="button" type="button" value = "Preprocess Documents" onclick = "preprocess()" />
+    <span id="tsnePerplexityText">t-SNE perplexity:</span>
+    <select id="tsnePerplexitySelect"></select>
+    <span id="Clustering_algo_text">Clustering <br>Method:</span>
+    <select id="Clustering_algo_select">
+      <option value='LDC'>LDC</option>
+      <option value='iK-means'>iK-means</option>
+    </select>
+</div>
+</body>
+</html>

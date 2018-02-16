@@ -1,0 +1,277 @@
+<!-- Ehsan Sherkat - Project -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>User Guide</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">  <!-- should be the first -->    
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+
+    <link href="css/userguide.css" type="text/css" rel="stylesheet" />
+ </head>
+ <body>
+	<div id="userguide_panel">
+
+		<!----------------------- introduction -------------------------->
+		<div id="introduction_margin">
+		<div id="introduction">
+			<img src="img/fig1.png" style="margin-right: 30px;margin-top: 30px;float:left;width:304px;height:220px;">
+			<h3>User Guide</h3>
+			<p style="overflow: auto;height: 275%;text-align:justify"> The usergude for the Interactive Docuemnt Clustering Poject. 
+				In the following each section is described. When the page load first, user should input her/his username then if the user has a saved session, the system ask whether she/he wants to load the session or not. If the document collection of the user needs to be preprocessed, user needs to preprocess the collection by pressing "Upload Document" button in <a href="#icon1" data-toggle="collapse" data-target="#collapse1">Panel1</a>.<br>
+        <strong>Help Video:</strong> You can have an access to an introduction video of the interface from <a target="_blank" href="video.html">here</a>
+			</p>
+		</div>
+		</div>
+
+		<hr id="line1">
+		<div id="panels">
+		<div class="accordion" id="accordion" >
+
+        <!----------------------- panel1 help -------------------------->
+        <div class="panel panel-default help_panel">
+          <div class="panel-heading">
+          	<h4 class="panel-title" onclick = "changeIcon('icon1')">
+            <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse1" href="#collapse1">
+             <span id="icon1" class="glyphicon glyphicon-triangle-right"></span> Panel1 (header)
+            </a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse">
+            <div class="accordion-inner">
+            	<img src="img/fig2.png" style="margin-left: 5px;margin-top: 5px;width:99%;height:50px;">
+            	<p id="p1" style="text-align:justify;margin:5px">This panel is called the header panel and contains some operations over all document collection. 
+            		From the left to the right of the above image there exists the following functionalities: </p>
+            		<ul>
+  						<li><p style="text-align:justify;margin:5px"><strong>Help: </strong>With this button, user can have an access to the help document (this page).</p></li>
+  						<li><p style="text-align:justify;margin:5px"><strong>Upload Document: </strong>This button enables the user to upload her own document collection. When the user clicks on this button, a new page will be shown in the new tab and ask the user to enter her user name. Whenever a user adds a new document, the document collection needs to be preprocessed. In the beginning if the document collection of the user needs to be preprocessed, she needs to use this button to preprocess her collection.</p></li>
+  						<li><p style="text-align:justify;margin:5px"><strong>Save Session: </strong>User can save her works by Save Session button. All the terms the user selected in <a href="#icon4" data-toggle="collapse" data-target="#collapse4">Clusters</a> panel, the names she selected for each cluster, changes she made to the Sliders in <a href="#icon9" data-toggle="collapse" data-target="#collapse9">General View</a> panel and the document collection except the text of the documents would be saved.</p></li>
+  						<li><p style="text-align:justify;margin:5px"><strong>Select Session: </strong>The list of saved sessions of the user is in this listbox ordered by the saved data (the oldest one is in the bottom of the list). When user click on each of the saved session, that session would be loaded for the user. <i>Caution:</i> When the new session loads, all unsaved work of the users will be missed. User can compare sessions with each other if they load the clustering interface in more than one Tab of the browser and then loading each saved session in one Tab. User can move terms from one session to other session by drag and drop.</p></li>
+  						<li><p style="text-align:justify;margin:5px"><strong>Delete Session: </strong>User can delete the selected session by pressing the Delete Session button.</p></li>
+  						<li><p style="text-align:justify;margin:5px"><strong>Cluster: </strong>When user made all her desired changes in clusters in <a href="#icon4" data-toggle="collapse" data-target="#collapse4">Clusters</a> panel, the clustering algorithm gets the new number of clusters and terms selected by the user for each one, then performs a clustering again and finally shows the new results to the user.</p></li>
+  						<li><p style="text-align:justify;margin:5px"><strong>Search: </strong>User can search a term over all document collection. While user type, a list of similar terms to the user's query is shown as an autocomplete list. When the user clicks on one of the terms in autocomplete list, that term will be added to the selected cluster in <a href="#icon4" data-toggle="collapse" data-target="#collapse4">Clusters</a> panel. The selected cluster has a red border line and gray background (the title page of all panels except panel 5 and 6 has the same color of the header of the selected cluster).</p></li>
+					</ul>           
+            </div>
+          </div>
+        </div>
+
+        <!----------------------- panel2 (document view)  help -------------------------->
+        <div class="panel panel-default help_panel">
+          <div class="panel-heading">
+          	<h4 class="panel-title" onclick = "changeIcon('icon2')">
+            <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse2" href="#collapse2">
+              <span id="icon2" class="glyphicon glyphicon-triangle-right"></span> Panel2 (document view)
+            </a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="accordion-inner">
+              <img src="img/fig3.png" style="margin:10px;float:left;width:290px;height:160px;border-width:5px;border:1px solid gray;">
+              <p style="text-align:justify;margin:5px">This panel shows the text of documents of clusters. The header color of this panel is similar to the color of selected cluster in <a href="#icon4" data-toggle="collapse" data-target="#collapse4">Clusters</a> panel. The selected cluster has a red border line and gray background (the title page of all panels except panel 5 and 6 has the same color of the header of the selected cluster). This panel is moveable and resizeable. When the user clicks on a term inside a cluster in <a href="#icon4" data-toggle="collapse" data-target="#collapse4">Clusters</a> panel or in the list of terms in <a href="#icon3" data-toggle="collapse" data-target="#collapse3">Cluster Key Terms</a> panel, that term if exists in the selected document will be highlighted (the color of highlight is similar to the color of the term in <a href="#icon3" data-toggle="collapse" data-target="#collapse3">Cluster Key Terms</a> panel). When the user double clicks on a term, that term will be added to the list of terms of selected cluster in <a href="#icon4" data-toggle="collapse" data-target="#collapse4">Clusters</a> panel. If the user selects a term in this panel, then she can drag and drop that term to her desired cluster. In the top of this panel (as shown in the picture), there are three functionalities. These functionalities are described in the following (from left to right of the picture):</p>
+              	<ul>
+  					<li><p style="text-align:justify;margin:5px"><strong>Document Select: </strong>User can select a document from the list of documents corresponding to the selected cluster in <a href="#icon4" data-toggle="collapse" data-target="#collapse4">Clusters</a> panel. The color of the selected document is red because the Stroke color of the corresponding node in <a href="#icon9" data-toggle="collapse" data-target="#collapse9">General View</a> graph is also red. The documents in this listbox are sorted based on their relatedness to the selected cluster (documents that are more related are on top of the list). The relatedness  of selected document to each clusters will be shown in the <a href="#icon6" data-toggle="collapse" data-target="#collapse6">Document-Cluster View</a> panel.</p></li>
+  					<li><p style="text-align:justify;margin:5px"><strong>ShowPDF: </strong>User can see the original PDF of the selected documents with this button. When user clicks on this button the PDF of the document is shown in a new Tab of the browser.</p></li>
+  					<li><p style="text-align:justify;margin:5px"><strong>ShowCloud: </strong>When the user click on this button, the term cloud of the document will be shown in <a href="#icon8" data-toggle="collapse" data-target="#collapse8">Term Cloud</a> panel (the title of <a href="#icon8" data-toggle="collapse" data-target="#collapse8">Term Cloud</a> panel will be change to "Term Cloud (Selected Document)").</p></li>
+  				</ul>
+            </div>
+          </div>
+        </div>
+
+        <!----------------------- panel3 (Cluster Key Terms) help -------------------------->
+        <div class="panel panel-default help_panel">
+          <div class="panel-heading">
+          	<h4 class="panel-title" onclick = "changeIcon('icon3')">
+            <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse3" href="#collapse3">
+             <span id="icon3" class="glyphicon glyphicon-triangle-right"></span> Panel3 (Cluster Key Terms)
+            </a>
+            </h4>
+          </div>
+          <div id="collapse3" class=" collapse">
+            <div class="accordion-inner">
+              <img src="img/fig4.png" style="margin:10px;float:left;width:290px;height:160px;border-width:5px;border:1px solid gray;">
+              <p style="text-align:justify;margin:5px">This panel shows the key terms of selected cluster. The header color of this panel is similar to the color of selected cluster in <a href="#icon4" data-toggle="collapse" data-target="#collapse4">Clusters</a> panel. The selected cluster has a red border line and gray background (the title page of all panels except panel 5 and 6 has the same color of the header of the selected cluster). This panel is moveable and resizable. The bar chart in front of each term shows the relatedness of the term to the selected cluster. Terms are sorted based on their relatedness in an increasing order (first terms are more similar to the cluster). If the user double clicks on a term, that term will be added to term list of selected cluster in <a href="#icon4" data-toggle="collapse" data-target="#collapse4">Clusters</a> panel. If the user hover mouse on the text of a term, the icon of the mouse will be change to move sign. In this situation, user can drag and drop the term and added it to her desired cluster.</p>
+              <p style="text-align:justify;margin:5px">User can select multiple terms by holding the Ctrl key. Every 11 terms in a row have the same color but with different gradient. If user drag the mouse on a term, she can select as many as she wants terms in a row. As the distance between to selected terms increase, the more distinctive colors they would have. When a user clicks on a term that already been selected, that term will be deselected. The relatedness of selected term to each clusters will be shown in the <a href="#icon7" data-toggle="collapse" data-target="#collapse7">Term-Cluster View</a> panel. For the selected term(s), all the documents that have this term will be highlighted in the <a href="#icon9" data-toggle="collapse" data-target="#collapse9">General View</a> panel in such a way that these documents nodes would have higher opacity degree.</p>
+            </div>
+          </div>
+        </div>
+
+        <!----------------------- panel4 (Clusters) Help -------------------------->
+        <div class="panel panel-default help_panel">
+          <div class="panel-heading">
+          	<h4 class="panel-title" onclick = "changeIcon('icon4')">
+            <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse4" href="#collapse4">
+              <span id="icon4" class="glyphicon glyphicon-triangle-right"></span> Panel4 (Clusters)
+            </a>
+            </h4>
+          </div>
+          <div id="collapse4" class=" collapse">
+            <div class="accordion-inner">
+            	<img src="img/fig5.png" style="margin:20px;float:left;width:290px;height:390px;border-width:5px;border:1px solid gray;">
+            	<p style="text-align:justify;margin:5px">This panel shows all clusters of the document collection (with 5 most related terms). The header color of this panel is similar to the color of selected cluster in Clusters panel. The selected cluster has a red border line and gray background (the title page of all panels except panel 5 and 6 has the same color of the header of the selected cluster). This panel is moveable and resizable. User can add new cluster by clicking on Add Cluster button.</p>
+            	<p style="text-align:justify;margin:5px">Each cluster has a panel and the header color of their panel shows their color. Clusters are moveable and user can move them inside Cluster panel. When the user click on a cluster, the border line of the cluster will be red and the background color of the cluster will be gray. When user clicks on the header part of the cluster, all document nodes related to that cluster will be highlighted in the <a href="#icon9" data-toggle="collapse" data-target="#collapse9">General View</a> panel in such a way that these documents nodes would have higher opacity degree.</p>
+            	<p style="text-align:justify;margin:5px">Whenever the user clicks on a term inside a cluster, that term will be highlighted in the <a href="#icon2" data-toggle="collapse" data-target="#collapse2">Document View</a>, <a href="#icon3" data-toggle="collapse" data-target="#collapse3">Cluster Key terms</a> panels and the relatedness of that term to other cluster will be shown in the <a href="#icon7" data-toggle="collapse" data-target="#collapse7">Term-Cluster View</a> panel. By double clicking on a term, that term will be deleted form the cluster. User can change the order of terms by dragging terms inside the cluster (the toper the more important). If the user hover her mouse on the text of a term, the mouse icon will be change to move. In this situation, user can drag and drop the term from on cluster each other clusters. By right clicking on a cluster there are five options for the user as follow:</p>
+            	<ul style="left:15px;">
+  					<li><p style="text-align:justify;margin:5px"><strong>AddTerm: </strong>With this button, user can add a term to the cluster.</p></li>
+  					<li><p style="text-align:justify;margin:5px"><strong>showNodes: </strong>When user clicks on this button, all document nodes related to that cluster will be highlighted in the <a href="#icon9" data-toggle="collapse" data-target="#collapse9">General View</a> panel in such a way that these documents nodes would have higher opacity degree.</p></li>
+  					<li><p style="text-align:justify;margin:5px"><strong>RenameCluster: </strong>User can rename the cluster with this option. When user rename a cluster, the name of cluster in all panels will also rename.</p></li>
+  					<li><p style="text-align:justify;margin:5px"><strong>DeleteCluster: </strong>User can delete the cluster with this option. When user delete a cluster, all information about that cluster in all panels will be removed and cannot be accessed any more. If user have doubt on deleting a cluster, it is better to save the session before in <a href="#icon1" data-toggle="collapse" data-target="#collapse1">Panel1</a>.</p></li>
+  					<li><p style="text-align:justify;margin:5px"><strong>ClearTerms: </strong>All the terms inside the cluster will be cleared by this option.</p></li>
+  				</ul>
+            </div>
+          </div>
+        </div>
+
+        <!----------------------- panel5 (Cluster Tree View) Help -------------------------->
+        <div class="panel panel-default help_panel">
+          <div class="panel-heading">
+          	<h4 class="panel-title" onclick = "changeIcon('icon5')">
+            <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse5" href="#collapse5">
+              <span id="icon5" class="glyphicon glyphicon-triangle-right"></span> Panel5 (Cluster Tree View)
+            </a>
+            </h4>
+          </div>
+          <div id="collapse5" class=" collapse">
+            <div class="accordion-inner">
+            <img src="img/fig6.png" style="margin:20px;float:left;width:290px;height:280px;border-width:5px;border:1px solid gray;">
+            <p style="text-align:justify;margin:5px">This panel shows all clusters in a tree view. When user clicks on the name of a cluster, that cluster will load. If user right clicks on the name of a cluster, a context menu with the following options will be shown to the user:</p>
+            <ul style="left:15px;">
+  				<li><p style="text-align:justify;margin:5px"><strong>AddTerm: </strong>With this button, user can add a term to the cluster.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>showNodes: </strong>When user clicks on this button, all document nodes related to that cluster will be highlighted in the <a href="#icon9" data-toggle="collapse" data-target="#collapse9">General View</a> panel in such a way that these documents nodes would have higher opacity degree.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Rename: </strong>User can rename the cluster with this option. When user rename a cluster, the name of cluster in all panels will also rename.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Delete: </strong>User can delete the cluster with this option. When user delete a cluster, all information about that cluster in all panels will be removed and cannot be accessed any more. If user have doubt on deleting a cluster, it is better to save the session before in <a href="#icon1" data-toggle="collapse" data-target="#collapse1">Panel1</a>.</p></li>
+  			</ul>
+  			<p style="text-align:justify;margin:5px">If the user click on a document, the content of the document will be presented in <a href="#icon2" data-toggle="collapse" data-target="#collapse2">Document View</a>. The right click on document name in Cluster Tree View, will result the following options for user:</p>
+  			<ul>
+  				<li><p style="text-align:justify;margin:5px"><strong>ShowPDF: </strong>User can see the original PDF of the selected documents with this button. When user clicks on this button the PDF of the document is shown in a new Tab of the browser.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>ShowCloud: </strong>When the user click on this button, the term cloud of the document will be shown in <a href="#icon8" data-toggle="collapse" data-target="#collapse8">Term Cloud</a> panel (the title of <a href="#icon8" data-toggle="collapse" data-target="#collapse8">Term Cloud</a> panel will be change to "Term Cloud (Selected Document)").</p></li>
+  			</ul>
+            </div>
+          </div>
+        </div>
+
+        <!----------------------- panel6 (Document-Cluster View) Help ------------------------>
+        <div class="panel panel-default help_panel">
+          <div class="panel-heading">
+          	<h4 class="panel-title" onclick = "changeIcon('icon6')">
+            <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse6" href="#collapse6">
+              <span id="icon6" class="glyphicon glyphicon-triangle-right"></span> Panel6 (Document-Cluster View)
+            </a>
+            </h4>
+          </div>
+          <div id="collapse6" class=" collapse">
+            <div class="accordion-inner">             
+              <p style="text-align:justify;margin:5px">The parallel coordinator of the Document-Cluster similarity is in this panel. When user rename a cluster name or delete a cluster, these changes will also takes effect in this panel also. User can move an Axis related to each cluster by drag and drop them. The color of parallel coordinator is similar to the color of the selected cluster in <a href="#icon4" data-toggle="collapse" data-target="#collapse4">Clusters</a> panel. The selected cluster has a red border line and gray background (the title page of all panels except panel 5 and 6 has the same color of the header of the selected cluster).</p>
+            </div>
+          </div>
+        </div>
+
+        <!----------------------- panel7 (Term-Cluster View) Help -------------------------->
+        <div class="panel panel-default help_panel">
+          <div class="panel-heading">
+          	<h4 class="panel-title" onclick = "changeIcon('icon7')">
+            <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse7" href="#collapse7">
+              <span id="icon7" class="glyphicon glyphicon-triangle-right"></span> Panel7 (Term-Cluster View)
+            </a>
+            </h4>
+          </div>
+          <div id="collapse7" class=" collapse">
+            <div class="accordion-inner">
+              <p style="text-align:justify;margin:5px">The parallel coordinator of the Term-Cluster similarity is in this panel. When user rename a cluster name or delete a cluster, these changes will also takes effect in this panel also. The color of each line correspond to the color of selected term in <a href="#icon3" data-toggle="collapse" data-target="#collapse3">Cluster Key terms</a> panel. User can move an Axis related to each cluster by drag and drop them.</p>
+            </div>
+          </div>
+        </div>
+
+        <!----------------------- panel8 (Term Cloud) Help -------------------------->
+        <div class="panel panel-default help_panel">
+          <div class="panel-heading">
+          	<h4 class="panel-title" onclick = "changeIcon('icon8')">
+            <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse8" href="#collapse8">
+              <span id="icon8" class="glyphicon glyphicon-triangle-right"></span> Panel8 (Term Cloud)
+            </a>
+            </h4>
+          </div>
+          <div id="collapse8" class=" collapse">
+            <div class="accordion-inner">
+              <img src="img/fig7.png" style="margin:10px;float:left;width:400px;height:180px;border-width:5px;border:1px solid gray;">
+              <p style="text-align:justify;margin:5px">This panel shows the term cloud of a selected cluster or a selected document or selected nodes. The information in the parenthesize in title of this panel indicates that the cloud is belonging to which element.</p>
+              <p style="text-align:justify;margin:5px">The default color of the terms is in gray scale but user can see the color one by checking the color box in the top right part of the panel. The darker color in gray mode and larger font size of a term, shows more relatedness of the term to the selected element (cluster, document or nodes in <a href="#icon9" data-toggle="collapse" data-target="#collapse9">General View</a> panel).</p>
+              <p style="text-align:justify;margin:5px">User can select a term inside Term Cloud and then drag and drop it in her desired cluster.</p>
+              <p style="text-align:justify;margin:5px">As depicted in the figure, there are three buttons inside this cluster. The functionality of these buttons are as follow:</p>
+              <ul>
+  				<li><p style="text-align:justify;margin:5px"><strong>Cluster Cloud: </strong>The term cloud of the selected cluster will be shown to the user by pressing this button.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>My Cloud: </strong>The term Cloud of the terms that user has chosen for the selected cluster will be shown by this button.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Clear Cloud: </strong>This will clear the term cloud.</p></li>
+  			  </ul>
+            </div>
+          </div>
+        </div>
+
+        <!----------------------- panel9 (General View) Help -------------------------->
+        <div class="panel panel-default help_panel">
+          <div class="panel-heading">
+          	<h4 class="panel-title" onclick = "changeIcon('icon9')">
+            <a class="accordion-toggle" data-toggle="collapse" data-target="#collapse9" href="#collapse9">
+              <span id="icon9" class="glyphicon glyphicon-triangle-right"></span> Panel9 (General View)
+            </a>
+            </h4>
+          </div>
+          <div id="collapse9" class=" collapse">
+            <div class="accordion-inner">
+              <img src="img/fig8.png" style="margin:20px;float:left;width:450px;height:400px;border-width:5px;border:1px solid gray;">
+              <p style="text-align:justify;margin:5px">This panel shows the Cosine Distance similarity between all documents of the collection. The nodes are documents and the links are based on the Cosine Distance. The color of nodes shows the cluster which they belong to it. The nodes that have the black color, are those which belong to more than one cluster. A node that have a red stroke color, is the node that corresponds to the selected document in <a href="#icon2" data-toggle="collapse" data-target="#collapse2">Document View</a>.</p>
+              <p style="text-align:justify;margin:5px">The graph layout is force layout. There are three sliders which they can change the properties of this layout as follow:</p>
+              <ul>
+  				<li><p style="text-align:justify;margin:5px"><strong>Gravity: </strong>The higher Gravity the more nodes will be placed circular way.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Link Distance: </strong>This property indicates the length of links between nodes.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Cosine Distance: </strong>This property add or remove links based on the Cosine Distance threshold. The higher Cosine Distance, the more links will be added the graph (100% means the complete graph and 0% means only links that are exactly the same will be linked to gather. Ones that have the same content but different name. In this situation repetitive documents can be find in the document collection). The number which is shown in the TextBox of the Cosine Distance means that all nodes that have less or equal Cosine Distance than this number are connected to each other.</p></li>  				
+  			  </ul>
+  			  <p style="text-align:justify;margin:5px">In the bottom left part of the panel, the number of links and the number of documents in the collection are indicated. In the bottom right part of the panel, there is MindMap button in which user can get the MindMap file of the document collection.</p>
+  			  <p style="text-align:justify;margin:5px">There are different mouse and keyword operations for this panel. These operations are described as follow:</p>
+  			  <ul>
+  				<li><p style="text-align:justify;margin:5px"><strong>Right Click: </strong>By right clicking on the graph, there is an option called "ShowCloud" in which user can see the term cloud of selected nodes in <a href="#icon8" data-toggle="collapse" data-target="#collapse8">Term Cloud</a> panel.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Left Click on the Panel: </strong>By left clicking in the graph, the opacity of all nodes will be the same an in this case user can see all the nodes on the document.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Left Click on Node: </strong>When user left click on a node, the opacity of that node and all its direct neighbors will be set to highest degree and the opacity of the rest of node will be decrease.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Hover on the node: </strong>When user hover mouse on a node, the stroke of that node and all its direct neighbor will be increase. If user keeps her mouse on a node for a while, a tooltip correspond to that node will be shown to user. In the tooltip the name of the document, the list of clusters that nodes belongs to and the list of top five terms of the document is shown to the user. If the user clicks on the name of the document in the tooltip, the PDF of the document will be pop-up in the new Tab of the browser. If the user clicks on the name of a cluster in the tooltip, that cluster will be loaded and the content of the Document will be shown in <a href="#icon2" data-toggle="collapse" data-target="#collapse2">Document View</a> panel. User can select a term inside the tooltip of the document and drag and drop it in her desired cluster.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Keep Operation: </strong>By holding Ctrl button, user can select as many nodes as she wants. The she can see the cloud of the selected terms.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Un-Keep Operation: </strong>By holding the Alt key, user can deselect as many selected nodes as she wants.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Drag a Node: </strong>User can drag a node in her desired part of the panel. When a node drags, the position of that node will be fixed.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Double Click on a Node: </strong>When user double clicks on a node, if the position of the node is already fixed, the position will be unfixed.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Double Click on Panel: </strong>By double clicking on the panel, the graph will be zoom in.</p></li>
+  				<li><p style="text-align:justify;margin:5px"><strong>Zoom: </strong>By the mouse wheel, user can zoom in or out the graph.</p></li>
+          <li><p style="text-align:justify;margin:5px"><strong>Graph VNA: </strong>Shows the graph in VNA format. VNA graph format is a well known format which graph analysis tools such as <a target="_blank" href="https://gephi.github.io/">Gephi</a> and <a target="_blank" href="https://sites.google.com/site/netdrawsoftware/home">NetDraw</a> are using.</p></li>
+				
+  			  </ul>
+            </div>
+          </div>
+        </div>
+
+
+	</div>
+    </div>
+	</div>
+
+	<!-------------------------------- copy right -------------------------->
+	<div id="copy_right_margin">
+	<p id="copy_right" style="text-align:center">&copy; 2017 Ehsan Sherkat. (last update: June 12, 2017)</p>
+	</div>
+
+	<script>
+	function changeIcon(partName) {
+		if($("#" + partName).hasClass("glyphicon glyphicon-triangle-right")) {
+			$("#" + partName).removeClass("glyphicon glyphicon-triangle-right");
+			$("#" + partName).addClass("glyphicon glyphicon-triangle-bottom");
+		}
+		else if($("#" + partName).addClass( "glyphicon glyphicon-triangle-bottom")) {
+			$("#" + partName).removeClass("glyphicon glyphicon-triangle-bottom");
+			$("#" + partName).addClass( "glyphicon glyphicon-triangle-right");
+		}
+	}
+	</script>
+	
+</body>
+</html>
